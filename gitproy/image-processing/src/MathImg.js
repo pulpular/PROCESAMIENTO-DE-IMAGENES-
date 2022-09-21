@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+exports.MathImg = void 0;
 var MathImg = /** @class */ (function () {
     function MathImg() {
     }
@@ -34,9 +37,9 @@ var MathImg = /** @class */ (function () {
         for (var i = 0; i < img.getHeight(); i++) {
             for (var j = 0; j < img.getWidth(); j++) {
                 prom = (arrImage[0][i][j] + arrImage[1][i][j] + arrImage[2][i][j]) / 3;
-                sal[0][i][j] = arrImage[2][i][j];
-                sal[1][i][j] = arrImage[2][i][j];
-                sal[2][i][j] = arrImage[2][i][j];
+                sal[0][i][j] = prom;
+                sal[1][i][j] = prom;
+                sal[2][i][j] = prom;
             }
         }
         return sal;
@@ -49,7 +52,7 @@ var MathImg = /** @class */ (function () {
         for (var i = 0; i < img.getHeight(); i++) {
             for (var j = 0; j < img.getWidth(); j++) {
                 sal[0][i][j] = Math.pow(arrImage[0][i][j], 2);
-                sal[1][i][j] = Math.pow(arrImage[0][i][j], 2);
+                sal[1][i][j] = Math.pow(arrImage[1][i][j], 2);
                 sal[2][i][j] = Math.pow(arrImage[2][i][j], 2);
             }
         }
@@ -114,22 +117,22 @@ var MathImg = /** @class */ (function () {
         }
         inicio = termino;
         termino = 2 * img.getWidth() / 3;
-        /*for (let i = 0; i < img.getHeight(); i++) {
-          for (let j = inicio; j < termino; j++) {
-            sal[0][i][j] = arrImage[0][i][j];
-            sal[1][i][j] = arrImage[1][i][j];
-            sal[2][i][j] = arrImage[2][i][j];
-          }
-        }*/
+        for (var i = 0; i < img.getHeight(); i++) {
+            for (var j = inicio; j < termino; j++) {
+                sal[0][i][j] = arrImage[0][i][j];
+                sal[1][i][j] = arrImage[1][i][j];
+                sal[2][i][j] = arrImage[2][i][j];
+            }
+        }
         inicio = termino;
         termino = img.getWidth();
-        /*for (let i = 0; i < img.getHeight(); i++) {
-          for (let j = inicio; j < termino; j++) {
-            sal[0][i][j] = arrImage[0][i][j];
-            sal[1][i][j] = 0;
-            sal[2][i][j] = 0;
-          }
-        } */
+        for (var i = 0; i < img.getHeight(); i++) {
+            for (var j = inicio; j < termino; j++) {
+                sal[0][i][j] = arrImage[0][i][j];
+                sal[1][i][j] = 0;
+                sal[2][i][j] = 0;
+            }
+        }
         return sal;
     };
     MathImg.correctionGamma = function (img, factores) {
@@ -967,4 +970,4 @@ var MathImg = /** @class */ (function () {
     };
     return MathImg;
 }());
-export { MathImg };
+exports.MathImg = MathImg;
