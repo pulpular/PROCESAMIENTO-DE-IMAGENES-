@@ -117,22 +117,22 @@ var MathImg = /** @class */ (function () {
         }
         inicio = termino;
         termino = 2 * img.getWidth() / 3;
-        for (var i = 0; i < img.getHeight(); i++) {
+       /* for (var i = 0; i < img.getHeight(); i++) {
             for (var j = inicio; j < termino; j++) {
                 sal[0][i][j] = arrImage[0][i][j];
                 sal[1][i][j] = arrImage[1][i][j];
                 sal[2][i][j] = arrImage[2][i][j];
             }
-        }
+        }*/
         inicio = termino;
         termino = img.getWidth();
-        for (var i = 0; i < img.getHeight(); i++) {
+      /*  for (var i = 0; i < img.getHeight(); i++) {
             for (var j = inicio; j < termino; j++) {
                 sal[0][i][j] = arrImage[0][i][j];
                 sal[1][i][j] = 0;
                 sal[2][i][j] = 0;
             }
-        }
+        }*/
         return sal;
     };
     MathImg.correctionGamma = function (img, factores) {
