@@ -109,13 +109,13 @@ export class MathImg {
     var sal = this.initArray(img.getWidth(), img.getHeight());
     let inicio=0, termino= img.getWidth()/3;
     console.log(inicio, termino);
-    for (let i = 0; i < img.getHeight(); i++) {
+    /*for (let i = 0; i < img.getHeight(); i++) {
       for (let j = inicio; j < termino; j++) {
         sal[0][i][j] = 0;
         sal[1][i][j] = arrImage[1][i][j];
         sal[2][i][j] = 0;
       }
-    }
+    }*/
       inicio = termino;
       termino = 2 * img.getWidth() / 3;
     /*for (let i = 0; i < img.getHeight(); i++) {
@@ -278,7 +278,7 @@ export class MathImg {
     }
     return sal;
   }
-
+  
   public static colorGradienteX(img: ImageType, factores: number[]): number[][][] {
     //variable que guarda el arreglo 3d de la imagen de color
     let arrImage: number[][][] = img.getArrayImg();

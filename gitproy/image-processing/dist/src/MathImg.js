@@ -105,13 +105,13 @@ var MathImg = /** @class */ (function () {
         var sal = this.initArray(img.getWidth(), img.getHeight());
         var inicio = 0, termino = img.getWidth() / 3;
         console.log(inicio, termino);
-        for (var i = 0; i < img.getHeight(); i++) {
-            for (var j = inicio; j < termino; j++) {
-                sal[0][i][j] = 0;
-                sal[1][i][j] = arrImage[1][i][j];
-                sal[2][i][j] = 0;
-            }
-        }
+        /*for (let i = 0; i < img.getHeight(); i++) {
+          for (let j = inicio; j < termino; j++) {
+            sal[0][i][j] = 0;
+            sal[1][i][j] = arrImage[1][i][j];
+            sal[2][i][j] = 0;
+          }
+        }*/
         inicio = termino;
         termino = 2 * img.getWidth() / 3;
         /*for (let i = 0; i < img.getHeight(); i++) {
