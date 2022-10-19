@@ -474,9 +474,9 @@ export class MathImg {
     var sal = this.initArray(img.getWidth(), img.getHeight());
     for (let i = 0; i < img.getHeight(); i++) {
       for (let j = 0; j < img.getWidth(); j++) {
-        sal[0][i][j] = arrImage[0][i][j] + dividir;
-        sal[1][i][j] = arrImage[1][i][j] + dividir;
-        sal[2][i][j] = arrImage[2][i][j] + dividir;
+        sal[0][i][j] = arrImage[0][i][j] / dividir;
+        sal[1][i][j] = arrImage[1][i][j] / dividir;
+        sal[2][i][j] = arrImage[2][i][j] / dividir;
       }
     }
     return sal;
