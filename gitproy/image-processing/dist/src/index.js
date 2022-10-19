@@ -91,6 +91,12 @@ function changeBrightness(evt) {
     var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
     imagenSal.imageArray2DtoData(pantalla2, MathImg.changeBrightness(imagenSal, parseFloat(factor)));
 }
+function cambioFtransferencia(evt) {
+    var args = prompt("Ingresa color de Inicio y final en formato r,g,b, separados por coma");
+    var factores = args.split(',').map(function (elem) { return parseFloat(elem); });
+    var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
+    imagenSal.imageArray2DtoData(pantalla2, MathImg.colorGradienteX(imagenSal, factores));
+}
 function colorGradienteX(evt) {
     var args = prompt("Ingresa color de Inicio y final en formato r,g,b, separados por coma");
     var factores = args.split(',').map(function (elem) { return parseFloat(elem); });
@@ -345,6 +351,7 @@ document.getElementById("op-desfaseX").addEventListener('click', desfaseX, false
 document.getElementById("op-desfaseY").addEventListener('click', desfaseY, false);
 //menu op. edicion
 document.getElementById("op-brillo").addEventListener('click', changeBrightness, false);
+document.getElementById("op-ftrans").addEventListener('click', changeBrightness, false);
 document.getElementById("op-gradienteX").addEventListener('click', colorGradienteX, false);
 document.getElementById("op-gradienteY").addEventListener('click', colorGradienteY, false);
 document.getElementById("op-contraste").addEventListener('click', opchangeContraste, false);
